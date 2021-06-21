@@ -4,6 +4,7 @@ import speech_recognition as sr
 import wikipedia
 import smtplib  #email purposes
 import webbrowser as wb
+import os  #logout,shutdown,restart
 
 engine   = pyttsx3.init() #initialising its module
 """engine.say("Hello World")
@@ -106,6 +107,16 @@ if __name__ == "__main__":
             chromepath = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe %s"
             search = takeCommand().lower()
             wb.get(chromepath).open_new_tab(search+".com" )
+
+        #using os module
+        elif "log out" in query:
+            os.system("shutdown -l")
+        elif "shutdown" in query:
+            os.system("shutdown /s /t 1")
+        elif "restart" in query:
+            os.system("shutdown /r /t 1")
+
+
 
 
 
