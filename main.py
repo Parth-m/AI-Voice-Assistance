@@ -122,6 +122,17 @@ if __name__ == "__main__":
             songs = os.listdir(songs_dir)
             os.startfile(os.path.join(songs_dir,songs[0]))
 
+        #remember condition
+        elif "remember" in query:
+            speak("What Should I remember?")
+            data  = takeCommand()
+            speak("You said me to remember " + data)
+            remember = open("data.txt","w")
+            remember.write(data)
+            remember.close()
+        elif "do you know anything" in query:
+            remember = open("data.txt","r")
+            speak("you asked me to remember that" + remember.read())
 
 #takeCommand()
 #wishme()
