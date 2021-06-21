@@ -85,7 +85,7 @@ if __name__ == "__main__":
             time()
         elif "date" in query:
             date()
-        elif "offline" in query:
+        elif "Goodbye Friday" in query:
             quit()
         elif "wikipedia" in query:
             speak("Searching...")
@@ -115,6 +115,8 @@ if __name__ == "__main__":
             os.system("shutdown /s /t 1")
         elif "restart" in query:
             os.system("shutdown /r /t 1")
+
+        #songs
 
 
 
