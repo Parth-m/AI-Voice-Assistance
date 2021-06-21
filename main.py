@@ -85,7 +85,7 @@ if __name__ == "__main__":
             time()
         elif "date" in query:
             date()
-        elif "Goodbye Friday" in query:
+        elif "goodbye" in query or "offline" in query or "Sayonara" in query:
             quit()
         elif "wikipedia" in query:
             speak("Searching...")
@@ -102,7 +102,7 @@ if __name__ == "__main__":
             except Exception as e:
                 speak(e)
                 speak("Unable to send the message")
-        elif "Search in Chrome" in query:
+        elif "search in chrome" in query:
             speak("What should I search ")
             chromepath = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe %s"
             search = takeCommand().lower()
@@ -117,11 +117,10 @@ if __name__ == "__main__":
             os.system("shutdown /r /t 1")
 
         #songs
-
-
-
-
-
+        elif "play songs" in query:
+            songs_dir = "E:\SOng"
+            songs = os.listdir(songs_dir)
+            os.startfile(os.path.join(songs_dir,songs[0]))
 
 
 #takeCommand()
