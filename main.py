@@ -7,6 +7,7 @@ import webbrowser as wb
 import os  #logout,shutdown,restart
 import pyautogui
 import psutil  #for cpu adn battery update
+import pyjokes  #for jokes
 
 engine   = pyttsx3.init() #initialising its module
 """engine.say("Hello World")
@@ -89,6 +90,9 @@ def cpu():
     speak("Battery is at")
     speak(battery.percent)
 
+def jokes():
+    speak(pyjokes.get_joke())
+
 
 if __name__ == "__main__":
     wishme()
@@ -157,6 +161,9 @@ if __name__ == "__main__":
         #cpu Function
         elif "cpu" in query:
             cpu()
+
+        elif "joke" in query:
+            jokes()
 
 #takeCommand()
 #wishme()
