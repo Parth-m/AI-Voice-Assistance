@@ -6,6 +6,7 @@ import smtplib  #email purposes
 import webbrowser as wb
 import os  #logout,shutdown,restart
 import pyautogui
+import psutil  #for cpu adn battery update
 
 engine   = pyttsx3.init() #initialising its module
 """engine.say("Hello World")
@@ -78,7 +79,16 @@ def sendemail(to,content):
 
 def screenshot():
     img = pyautogui.screenshot()
-    img.save("C:\Users\parth\OneDrive\Pictures\Screenshots\ss.png")
+    img.save("C:/Users/parth/Screenshot/ss.png")
+
+def cpu():
+    usage = str(psutil.cpu_percent())
+    speak("Cpu is at" + usage)
+
+    battery = psutil.sensors_battery()
+    speak("Battery is at")
+    speak(battery.percent)
+
 
 if __name__ == "__main__":
     wishme()
@@ -143,6 +153,10 @@ if __name__ == "__main__":
         elif "screenshot" in query:
             screenshot()
             speak("Done")
+
+        #cpu Function
+        elif "cpu" in query:
+            cpu()
 
 #takeCommand()
 #wishme()
